@@ -1,0 +1,10 @@
+Year,Month,Day,dayOfWeek,CrimeAgainst,Neighborhood,OpenDataLat,OpenDataLon,OffenseCategory
+2023,July,31,Monday,Property,University Park,45.58525045,-122.7317279,Larceny Offenses
+2023,June,28,Wednesday,Property,Northwest Industrial,45.540595,-122.7022391,Motor Vehicle Theft
+2023,June,28,Wednesday,Property,Lents,45.46859869,-122.5778052,Vandalism
+2023,January,29,Sunday,Society,Downtown,45.52052721,-122.6754748,Drug/Narcotic Offenses
+2023,January,29,Sunday,Person,Downtown,45.52052721,-122.6754748,Assault Offenses
+2021,March,5,Friday,Property,Concordia,45.55899521,-122.6351209,Vandalism
+2021,March,4,Thursday,Property,Powellhurst-Gilbert,45.49677808,-122.5349126,Burglary
+2022,October,9,Sunday,Property,Cathedral Park,45.58783771,-122.7500395,Fraud Offenses
+2022,October,9,Sunday,Property,Foster-Powell,45.49020325,-122.5851486,Robbery

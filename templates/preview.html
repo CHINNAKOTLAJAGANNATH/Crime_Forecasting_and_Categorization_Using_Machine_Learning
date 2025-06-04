@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>crime prediction</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../static/css/preview.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+  <style>    
+ 
+    .scrollable {
+        width: 1200px;
+        height: 1000px;
+        overflow: auto;
+        scroll-margin-right: 20px;
+    }
+  </style>
+    <style>
+            
+                  
+            
+      h1 {
+          color:#f44336;
+      }
+  b{
+  color: #DC143C;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <span>
+              <b>
+                Crime Prediction 
+              </b>
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <b>   <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a></b>
+                </li>
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('login')}}"> Login </a> </b>
+                </li>
+
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('upload')}}">Upload </a> </b>
+                </li>
+              </ul>
+            
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h2>
+                        Crime Prediction
+
+                      </h2>
+                      <h1>
+                        Preview
+                      </h1>
+                      
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- do section -->
+
+  <section class="do_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Preview
+        </h2>
+        <p>
+          Portland Oregon,USA Crime Prediction
+        </p>
+      </div>
+      
+
+      <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+      
+         
+      
+        <!-- Custom fonts for this theme -->
+        <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+      
+        <!-- Theme CSS -->
+        <link href="css/freelancer.min.css" rel="stylesheet">
+          <style>
+         #loading {
+         background: url('../static/ajax-loader.gif') no-repeat center center;
+         position: absolute;
+         top: 0;
+         left: 59;
+         height: 100%;
+         width: 86%;
+         z-index: 9999999;
+      }
+         </style>
+        
+      
+      </head>
+       
+      <body id="page-top">
+    
+        <!-- Navigation -->
+       
+      
+        <!-- Contact Section -->
+        <section class="page-section" id="contact">
+     
+           <br>
+         <br>
+            <!-- Contact Section Heading -->
+            
+      
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+               
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+      
+            <!-- Contact Section Form -->
+            <div class="row" style="margin-left:-300px">
+           
+              <div class="col-lg-8 mx-auto">
+        <div class="scrollable"> 
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+          {{ df_view.to_html(classes="table striped",na_rep="-") | safe}}
+
+
+        </div> 
+              </div>
+            
+            </div>
+             
+        </section>
+        </br>
+       
+       
+       <div class="form-group" style="padding:0px 250px 10px 40px;height:200px">
+                          <input style="margin-left:300px" type="button" onclick="hideLoader()" class="btn btn-primary" value="Click to Train | Test" />
+                <div id="loading" style="display:None;margin-top:552950px"></div>
+                </div>
+      
+      
+           
+                
+
+                
+       
+        
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+         <script type='text/javascript'>
+         
+      function hideLoader() {  
+      $('#loading').show(0).delay(10000).hide(0,function(){
+           alert("Training finished!");
+         window.location = "{{url_for('prediction')}}";
+         });    
+      }
+      
+      
+         </script>
+         
+      
+      </body>
+
+
+
+    </div>
+  </section>
+
+  <!-- end do section -->
+
+  <!-- who section -->
+
+  
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+         
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+     
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script 
+    -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      navText: [],
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>

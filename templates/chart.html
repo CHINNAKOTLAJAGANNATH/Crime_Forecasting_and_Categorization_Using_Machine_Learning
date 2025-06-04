@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>crime prediction</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../static/css/chart.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+  <style>
+            
+                  
+            
+    h1 {
+        color:#f44336;
+    }
+b{
+color: #DC143C;
+}
+</style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <span>
+              <b>
+                Crime Prediction 
+              </b>
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <b>   <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a></b>
+                </li>
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('login')}}"> Login </a> </b>
+                </li>
+
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('upload')}}">Upload </a> </b>
+                </li>
+                
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('prediction')}}">Prediction </a> </b>
+                </li>
+
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('chart')}}">chart </a> </b>
+                </li>
+
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('index')}}">Logout </a> </b>
+                </li>
+              </ul>
+              <div class="user_option">
+              
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h2>
+                        Crime Prediction
+
+                      </h2>
+                      <h1>
+                        Chart
+                      </h1>
+                      
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- do section -->
+
+  <section class="do_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+        Chart
+        </h2>
+        <p>
+          Portland Oregon,USA Crime Prediction
+        </p>
+      </div>
+      
+
+      <center><h1> Highest crime type </h1></center>
+      <html>
+<head>
+       
+        <div class="col-md-6 col-lg-4" style="margin-left:150px"> 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ["crime_types", "percentage", { role: "style" } ],
+      ["Larceny Offenses", 99, "#b87333"],
+      ["Motor Vehicle Theft", 85, "#76A7FA"],
+      ["Burglary", 70, "gold"],
+      ["Assault Offenses", 75, "color: #703593"],
+  ["Fraud Offenses", 60, "color: #0000FF"]
+  
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+                     { calc: "stringify",
+                       sourceColumn: 1,
+                       type: "string",
+                       role: "annotation" },
+                     2]);
+
+    var options = {
+      title: "",
+      width: 600,
+      height: 400,
+      bar: {groupWidth: "95%"},
+      legend: { position: "none" },
+    };
+     var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+    chart.draw(view, options); 
+}
+</script>
+<center><div id="columnchart_values" style="width: 900px; height: 300px;"></div> </center>
+</body>
+</html>	
+
+
+
+
+    
+    
+    
+    
+    
+    
+    </div>
+        </div>
+      </div>
+    
+      
+       
+
+ </br>
+ </br>
+ 
+      
+      
+      
+      
+      
+      
+             
+              
+            
+      
+      
+      
+      
+      
+      
+      
+   
+        <!-- End col-->
+      </div>
+    </div>
+  </div><!-- End About Section -->
+<br>
+<br>
+<br>
+<br>
+<center><h1>Percentage of crime occurence with particular Year</h1></center>
+   <head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['DayOfWeek', 'Percentage'],
+        ['2016',     30],
+       
+        ['2017',    40],
+    ['2018',     50],
+       
+        ['2019',    60],
+    ['2020',     70],
+       
+        ['2021',    85],
+    ['2022',     90],
+    ['2023',     85]
+  
+      ]);
+
+      var options = {
+        title: '',
+        is3D: true,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+    }
+  
+  </script>
+</head>
+<body>
+   
+ 
+<center>  <div id="piechart_3d" style="width: 900px; height: 500px; "></div></center>
+ 
+</body>
+     
+    
+    <br>
+    <br>
+    </html>
+</head>
+
+
+
+    </div>
+  </section>
+
+  <!-- end do section -->
+
+  <!-- who section -->
+ 
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+         
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+     
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script 
+    -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      navText: [],
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>

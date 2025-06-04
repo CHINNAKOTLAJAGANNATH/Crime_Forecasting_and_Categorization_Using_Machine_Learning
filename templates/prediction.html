@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>crime prediction</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../static/css/prediction.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+  <style>
+            
+         
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+             
+            
+    h1 {
+        color:#f44336;
+    }
+b{
+color: #100577;
+}
+</style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <b>
+              Crime Prediction 
+            </b>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <b>   <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a></b>
+                </li>
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('login')}}"> Login </a> </b>
+                </li>
+
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('upload')}}">Upload </a> </b>
+                </li>
+                
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('prediction')}}">Prediction </a> </b>
+                </li>
+
+                <li class="nav-item">
+                  <b>  <a class="nav-link" href="{{url_for('chart')}}">chart </a> </b>
+                </li>
+
+              </ul>
+            
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h2>
+                        Crime Prediction
+
+                      </h2>
+                      <h1>
+                        Preview
+                      </h1>
+                      
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- do section -->
+
+  <section class="do_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Prediction
+        </h2>
+        <p>
+          Portland Oregon,USA Crime Prediction
+        </p>
+      </div>
+      
+      <body class = "background">
+
+ 
+					
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-left:-20px;">
+                        <form id="map-form" action="{{ url_for('predict')}}"method="post">
+    
+      
+   
+    <div class="span5">
+       <div class="control-group">
+           
+         <center><label class="control-label" for="inputMessage"><b></b></label></br></center>
+           </br>
+          <div class="controls">
+           
+        <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Year: </b> <input type="text" name="Year" placeholder="Year" required="required" width="300" style="width: 300px"/></center>
+           
+          </div>
+          </br>
+            
+              
+        <div class="controls">
+
+         <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Month:</b>    <select   type="text"  name="Month" required="required" placeholder="Month" width="300" style="width: 300px"></center>
+          
+           <option value="1">January</option>
+            <option value="2"> February</option>
+          <option value="3"> March </option>
+              <option value="4"> April </option>
+          <option value="5"> May</option>
+          <option value="6"> June</option>
+          <option value="7">July</option>
+            <option value="8"> August </option>
+          <option value="9"> September  </option>
+              <option value="10"> October </option>
+          <option value="11"> November</option>
+          <option value="12"> December</option>
+      </select> 
+       </div>
+           </br>
+          <div class="controls">
+        <center>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Day: </b><input type="text" name="Day" placeholder="Day"  width="300" style="width: 300px" required="required" />   </center>
+           
+          </div>
+               </br>
+               <div class="controls">
+      
+                <center><b> DayOfWeek:</b>    <select   type="text"  name="dayOfWeek" required="required" placeholder="dayOfWeek" width="300" style="width: 300px"></center>
+                 <option value="0">Monday</option>
+                  <option value="1">Tuesday</option>
+                   <option value="2"> Wednesday</option>
+                 <option value="3"> Thursday</option>
+                     <option value="4"> Friday</option>
+                 <option value="5"> Saturday</option>
+                 <option value="6"> Sunday</option>
+             </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </div>
+                   </br>
+
+                   <div class="controls">
+      
+                    <center><b> CrimeAgainst:</b>    <select   type="text"  name="crimeAgainst" required="required" placeholder="CrimeAgainst" width="300" style="width: 300px"></center>
+                     <option value="0">Property</option>
+                      <option value="1">Person</option>
+                       <option value="2"> Society</option>
+                 
+                 </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </div>
+                       </br>
+           <div class="controls">
+      
+            <center><b> Near place:</b>    <select   type="text"  name="near_place" required="required" placeholder="Near_place" width="300" style="width: 300px"></center>
+             <option value="0">University Park</option>
+              <option value="1">Centennial</option>
+               <option value="2"> Downtown</option>
+             <option value="3"> Old Town/Chinatown</option>
+                 <option value="4"> Sunnyside</option>
+             <option value="5"> Buckman East</option>
+             <option value="6"> Northwest</option>
+             <option value ="7">Eastmoreland</option>
+             <option value ="8">Hazelwood</option>
+             <option value ="9">Brentwood-Darlington</option>
+             <option value="10">Lents</option>
+             <option value="11">Pearl</option>
+              <option value="12"> South Portland</option>
+            <option value="13"> Arbor Lodge</option>
+                <option value="14"> Piedmont</option>
+            <option value="15"> Homestead</option>
+            <option value="16"> Roseway</option>
+            <option value ="17">Multnomah</option>
+            <option value ="18">Woodstock</option>
+            <option value ="19">Powellhurst-Gilbert</option>
+            <option value="20">Concordia</option>
+            <option value="21">Goose Hollow</option>
+             <option value="22"> Overlook</option>
+           <option value="23">Southwest Hills</option>
+               <option value="24"> Hosford-Abernethy</option>
+           <option value="25"> Creston-Kenilworth</option>
+           <option value="26"> Sellwood-Moreland</option>
+           <option value ="27">Buckman West</option>
+           <option value ="28">Arlington Heights</option>
+           <option value ="29">Eliot</option>
+           <option value="30">Humboldt</option>
+           <option value="31">Laurelhurst</option>
+            <option value="32"> South Tabor</option>
+          <option value="33"> Cathedral Park</option>
+              <option value="34"> Parkrose</option>
+          <option value="35"> Sumner</option>
+          <option value="36"> Madison South</option>
+          <option value ="37">Kerns</option>
+          <option value ="38">Montavilla</option>
+          <option value ="39">Maplewood</option>
+          <option value="40">Hayhurst</option>
+          <option value="41">Sullivan's Gulch</option>
+           <option value="42"> Lloyd</option>
+         <option value="43"> Portsmouth</option>
+             <option value="44"> Cully</option>
+         <option value="45"> King</option>
+         <option value="46"> Reed</option>
+         <option value ="47">Richmond</option>
+         <option value ="48">Rose City Park</option>
+         <option value ="49">Kenton</option>
+         <option value="50">Hillsdale</option>
+         <option value="51">Boise</option>
+          <option value="52"> Marshall Park</option>
+        <option value="53"> Woodlawn</option>
+            <option value="54"> North Tabor</option>
+        <option value="55"> Mill Park</option>
+        <option value="56"> Alameda</option>
+        <option value ="57">Parkrose Heights</option>
+        <option value ="58">St Johns</option>
+        <option value ="59">Hillside</option>
+        <option value="60">Wilkes</option>
+        <option value="61">Mt Tabor</option>
+         <option value="62"> Hollywood</option>
+       <option value="63"> Mt Scott-Arleta</option>
+           <option value="64"> Irvington</option>
+
+       <option value="65"> Brooklyn</option>
+       <option value="66"> Ashcreek</option>
+       <option value ="67">Sabin</option>
+       <option value ="68">East Columbia</option>
+       <option value ="69">Glenfair</option>
+       <option value="70">Beaumont-Wilshire</option>
+       <option value="71">Northwest Heights</option>
+        <option value="72"> Foster-Powell</option>
+      <option value="73"> Linnton</option>
+          <option value="74"> Sunderland</option>
+      <option value="75"> Russell</option>
+      <option value="76"> Hayden Island</option>
+      <option value ="77">Far Southwest</option>
+    
+      <option value ="78">West Portland Park</option>
+      <option value="79">Grant Park</option>
+
+      <option value="80">Ardenwald</option>
+       <option value="81"> Northwest Industrial</option>
+     <option value="82"> Crestwood</option>
+         <option value="83"> Bridgeton</option>
+     <option value="84"> Pleasant Valley</option>
+     <option value="85"> Forest Park</option>
+     <option value ="86">South Burlingame</option>
+     <option value ="87">Bridlemile</option>
+     <option value ="88">Sylvan-Highlands</option>
+     <option value="89">Woodland Park</option>
+     <option value="90">Arnold Creek</option>
+      <option value="91"> Collins View</option>
+    <option value="92"> Healy Heights</option>
+    <option value="93"> Markham</option>
+    <option value="94"> Argay</option>
+    <option value="95"> Vernon</option>
+        
+         </select> &nbsp;&nbsp;
+          </div>
+             
+ 
+            
+               </br>
+               <!-- <form id="map-form"> -->
+            <div class="controls">
+        <center> &nbsp;&nbsp;&nbsp; &nbsp; <b> Latitude: </b><input type="text" id = 'latitude' name="latitude" placeholder="Latitude"  width="300" style="width: 300px" required="required" /> &nbsp;&nbsp;&nbsp; </center>
+           
+          </div>
+               </br>
+            <div class="controls">
+        <center> &nbsp;&nbsp;&nbsp; &nbsp; <b> Longitude: </b><input type="text" id = 'longitude' name="longitude" placeholder="Longitude"  width="300" style="width: 300px" required="required" />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+           
+          </div>
+               </br>
+               <div class="controls">
+      
+                <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Model:</b>    <select   type="text"  name="Model" required="required" placeholder="Model" width="300" style="width: 300px"></center>
+                  
+                  <option value="DecisionTreeClassifier">DecisionTreeClassifier</option> 
+                  <option value="BaggingClassifier">BaggingClassifier</option>
+             
+             </select>  
+              </div>
+                   </br>
+              <!-- </form>
+              -->
+              <div style="margin-left:50px;">  <center>  <button type="submit" class="btn btn-secondary">Predict </button></center> </div>
+   </form></br>
+   
+      <center><h1> Offense is : {{ prediction_text }} </h1></center>
+    </br>
+      <center><h1> Model : {{model}} </h1></center>
+    
+       </div>	 
+          
+               </div>
+              
+
+</body> 
+
+
+
+
+    </div>
+  </section>
+
+  <!-- end do section -->
+
+  <!-- who section -->
+
+  
+   
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+         
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+     
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script 
+    -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      navText: [],
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>
